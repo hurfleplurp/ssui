@@ -6,33 +6,33 @@ A graphical user interface for editing the `StyleSwitcher.ini` configuration fil
 
 ## Screenshots
 
-### Display Tab — General settings, FOV, display mode, and per-weapon RGB colour picker
+### Display Tab - General settings, FOV, display mode, and per-weapon RGB colour picker
 ![Display tab](docs/screenshots/display.png)
 
 Colour fields show a live preview swatch next to each hex value. Click the swatch to open the colour picker.
 
-### Game Tab — Core abilities, Arcade mode, Artemis, and other gameplay options
+### Game Tab - Core abilities, Arcade mode, Artemis, and other gameplay options
 ![Game tab](docs/screenshots/game.png)
 
-### Input Tab — Hotkeys and full keyboard remapping with live rebind
+### Input Tab - Hotkeys and full keyboard remapping with live rebind
 ![Input tab](docs/screenshots/input.png)
 
 Keybind fields display a human-readable label alongside the stored hex code (e.g. `70` → **Bound to: F1**, `51,51` → **In game: Q | Menu: Q**). Click **Listen** on any row then press a key to rebind it instantly. Press **Escape** to cancel.
 
-### Sound Tab — Volume controls and BGM track list
+### Sound Tab - Volume controls and BGM track list
 ![Sound tab](docs/screenshots/sound.png)
 
-### System Tab — Language, subtitles, and cutscene options
+### System Tab - Language, subtitles, and cutscene options
 ![System tab](docs/screenshots/system.png)
 
 ---
 
 ## Features
 
-- **Dark theme** — Fusion palette applied by default for comfortable low-light use
-- **Per-weapon colour picker** — Click the colour swatch next to any RGB field to pick a colour; the swatch updates live as you type a hex value
-- **Human-readable keybind labels** — Every hotkey and keyboard mapping field shows which key it is currently bound to
-- **Live rebind capture** — Click **Listen**, press any key, and the binding is written immediately; press **Escape** to cancel
+- **Dark theme** - Fusion palette applied by default for comfortable low-light use
+- **Per-weapon colour picker** - Click the colour swatch next to any RGB field to pick a colour; the swatch updates live as you type a hex value
+- **Human-readable keybind labels** - Every hotkey and keyboard mapping field shows which key it is currently bound to
+- **Live rebind capture** - Click **Listen**, press any key, and the binding is written immediately; press **Escape** to cancel
 - Full coverage of all `StyleSwitcher.ini` options across five tabs: Display, Game, Input, Sound, System
 - Automatically loads `StyleSwitcher.ini` from the same directory on startup
 - Save / Save As / Open Config buttons
