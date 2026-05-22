@@ -1,0 +1,3569 @@
+<html>
+<head>
+<title>Style Switcher 3.1.6 Documentation</title>
+<style type="text/css">
+a {
+	color: #FF0000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.content li {
+	list-style: none;
+	margin-left: -16px;
+}
+.code {
+	background-color: #E3E3E3;
+	padding: 5px;
+	text-align: left;
+	margin: 0 auto;
+	display: inline-block;
+}
+.code br:empty {
+	line-height: 14px;
+}
+table {
+	border-collapse: collapse;
+	border: 1px solid black
+}
+.listing th {
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+}
+.listing td {
+	border: 1px solid black;
+	padding: 5px;
+	max-width: 500;
+}
+.listing td:nth-child(4n+2) {
+	text-align: center;
+}
+.listing td:nth-child(4n+3) {
+	text-align: center;
+}
+.listing td:nth-child(4n+4) {
+	text-align: center;
+}
+.listing2 th {
+	font-weight: bold;
+	text-align: left;
+	border: 1px solid black;
+	padding: 5px;
+}
+.listing2 td {
+	text-align: left;
+	border: 1px solid black;
+	padding: 5px;
+	max-width: 500;
+}
+</style>
+</head>
+<body>
+<h1>Style Switcher 3.1.6 Documentation</h1>
+<ol class="content">
+<li>1. <a href="#SupportedVersions">Supported Versions</a></li>
+<li>2. <a href="#Installation">Installation</a>
+<ol>
+<li>2.1 <a href="#XInputSetup">XInput Setup</a></li>
+</ol>
+</li>
+<li>3. <a href="#Uninstallation">Uninstallation</a></li>
+<li>4. <a href="#Configuration">Configuration</a>
+<ol>
+<li>4.1 <a href="#DISPLAY">DISPLAY</a></li>
+<li>4.2 <a href="#GAME">GAME</a></li>
+<li>4.3 <a href="#INPUT">INPUT</a></li>
+<li>4.4 <a href="#SOUND">SOUND</a></li>
+<li>4.5 <a href="#SYSTEM">SYSTEM</a></li>
+</ol>
+</li>
+<li>5. <a href="#Variables">Variables</a>
+<ol>
+<li>5.1 <a href="#DisplayModes">Display Modes</a></li>
+<li>5.2 <a href="#Missions">Missions</a></li>
+<li>5.3 <a href="#Modes">Modes</a></li>
+<li>5.4 <a href="#Characters">Characters</a></li>
+<li>5.5 <a href="#Styles">Styles</a></li>
+<li>5.6 <a href="#Weapons">Weapons</a></li>
+<li>5.7 <a href="#DevilForms">Devil forms</a></li>
+<li>5.8 <a href="#Swords">Swords</a></li>
+<li>5.9 <a href="#Languages">Languages</a></li>
+<li>5.10 <a href="#Rooms">Rooms</a></li>
+<li>5.11 <a href="#Moves">Moves</a>
+<ol>
+<li>5.11.1 <a href="#Dante">Dante</a></li>
+<li>5.11.2 <a href="#Vergil">Vergil</a></li>
+</ol>
+</li>
+<li>5.12 <a href="#Commands">Commands</a></li>
+<li>5.13 <a href="#Tilt">Tilt</a></li>
+</ol>
+</li>
+<li>6. <a href="#Tutorials">Tutorials</a>
+<ol>
+<li>6.1 <a href="#ScriptEngine">Script Engine</a>
+<ol>
+<li>6.1.1 <a href="#ScriptEngineExamples">Examples</a></li>
+</ol>
+</li>
+<li>6.2 <a href="#AddMissingBGMFiles">Add missing BGM files</a></li>
+</ol>
+</li>
+</ol>
+<h3><span id="SupportedVersions">Supported Versions</span></h3>
+<table class="listing2">
+<tr>
+<th>Release</th>
+<th>Version</th>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>Steam</td>
+<td>1.3</td>
+</tr>
+</table>
+</br>
+<h3><span id="Installation">Installation</span></h3>
+<ul>
+<li>Download and install the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48145">Visual C++ 2015 run-time components (x86)</a>.</li>
+<li>Move or copy the contents of bin to your Devil May Cry 3 root directory.</li>
+Typically this is C:\Program Files (x86)\Steam\steamapps\common\Devil May Cry 3.</br>
+<li>Run install.bat.</li>
+It will ask you to select a loader at the end, type the corresponding number and hit enter to confirm.</br>
+If you will only use your keyboard, select dinput8.dll.</br>
+Choose dsound.dll if you want to use a XInput device.</br>
+Keyboard users can skip the following steps and continue to the <a href="#Configuration">configuration</a>.</br>
+</br>
+<h3><span id="XInputSetup">XInput Setup</span></h3>
+<li>Download, extract and run <a href="https://sites.google.com/site/0dd14lab/xinput-plus">XInput Plus</a>.</li>
+<li>Click on Select.</li>
+<li>Navigate to your Devil May Cry 3 root directory, highlight dmc3se.exe by clicking on it and click on Open.</li>
+<li>Click on DirectInput.</li>
+<li>Tick the check box labelled 'Enable DirectInput Output'.</li>
+<li>Click on the drop-down button right next to LT/RT.</li>
+<li>Select Button 11/12 from the drop-down list.</li>
+<li>Below that, click on the drop-down button right next to GUIDE.</li>
+<li>Select Button 13.</li>
+<li>Click on Apply.</li>
+<li>Confirm.</li>
+<li>Confirm.</li>
+<li>Click on Quit.</li>
+<li>Open notepad and paste the following template into it.</li>
+</br>
+<div class="code">
+[Controller (XBOX 360 For Windows)]</br>
+Start=7</br>
+Select=6</br>
+Circle=1</br>
+Triangle=3</br>
+Square=2</br>
+Cross=0</br>
+L1=4</br>
+R1=5</br>
+L2=10</br>
+R2=11</br>
+L3=8</br>
+R3=9</br>
+L<->R=1</br>
+</div>
+</br>
+</br>
+This template should work for most XInput devices. The string within the brackets is the name of the device. It has to match your device's name or the template will not be applied.</br>
+To get a list of all connected game controllers press Win + R, type joy.cpl and hit enter.
+<li>Save the file as dmc3se.ini in your Devil May Cry 3 root directory.</li>
+<li>Open XInputPlus.ini with notepad.</li>
+<li>Scroll down until you reach the X2DInput section.</li>
+</br>
+replace</br>
+</br>
+<div class="code">
+LS_X=X_Axis</br>
+LS_Y=Y_Axis</br>
+</div>
+</br>
+</br>
+with</br>
+</br>
+<div class="code">
+LS_X=Y_Axis</br>
+LS_Y=X_Axis</br>
+</div>
+.</br>
+</br>
+<li>Save and close the file.</li>
+</ul>
+<h3><span id="Uninstallation">Uninstallation</span></h3>
+<ul>
+<li>Navigate to your Devil May Cry 3 root directory and run uninstall.bat.</li>
+This will also delete your scripts and XInput Plus so back those up if you want to keep them.
+</ul>
+<h3><span id="Configuration">Configuration</span></h3>
+Settings can be changed by editing the StyleSwitcher.ini file. The file contains multiple sections, each representing a specific target.</br>
+An entry within a section typically looks like name=value, where value is of a specific <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751(v=vs.85).aspx">data type</a>.</br>
+</br>
+<span id="DISPLAY"><b>DISPLAY</b></span></br>
+</br>
+This section covers all display related settings.</br>
+</br>
+<table class="listing">
+<tr>
+<th>Setting</th>
+<th>Data type</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Bloom</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>
+Looks great in most rooms, looks horrible in some rooms. You decide.</br>
+You can toggle it ingame by pressing F5.</br>
+</br>
+Note: Can cause graphical glitches in some rooms.
+</td>
+</tr>
+<tr>
+<td>DisableBlurShader</td>
+<td>unsigned int</td>
+<td>1</td>
+<td rowspan="3">Self-explanatory.</td>
+</tr>
+<tr>
+<td>DisableFogShader</td>
+<td>unsigned int</td>
+<td>1</td>
+</tr>
+<tr>
+<td>DisableShadowEngine</td>
+<td>unsigned int</td>
+<td>1</td>
+</tr>
+<tr>
+<td>FOV</td>
+<td>float</td>
+<td>0.5</td>
+<td>Sets the <a href="https://en.wikipedia.org/wiki/Field_of_view_in_video_games">field of view</a>.</td>
+</tr>
+<tr>
+<td>GammaCorrection</td>
+<td>unsigned int</td>
+<td>1</td>
+<td>Self-explanatory.</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Sets the <a href="#DisplayModes">display mode</a>.</td>
+</tr>
+<tr>
+<td>Noir</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>
+Turns models black while keeping most of their effects intact.</br>
+You can toggle it ingame by pressing F6.</br>
+</br>
+Note: Will very likely crash the game during transitions.
+</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>
+3x unsigned int
+</td>
+<td>1280x720@60</td>
+<td>
+The format is width x height @ fps limit.</br>
+</br>
+Note: The fps limit has to be within 0 to 255 for the mission timer to work correctly.
+</td>
+</tr>
+<tr>
+<td>
+RGB.Rebellion</br>
+RGB.Cerberus</br>
+RGB.AgniRudra</br>
+RGB.Nevan</br>
+RGB.Beowulf</br>
+RGB.Sparda</br>
+RGB.Yamato</br>
+RGB.Beowulf.Vergil</br>
+RGB.ForceEdge</br>
+RGB.NeroAngelo</br>
+RGB.AirHike.Rebellion</br>
+RGB.AirHike.Cerberus</br>
+RGB.AirHike.AgniRudra</br>
+RGB.AirHike.Nevan</br>
+RGB.AirHike.Beowulf</br>
+RGB.SkyStar</br>
+RGB.Ultimate
+</td>
+<td>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char</br>
+3x unsigned char
+</td>
+<td>
+800000</br>
+608090</br>
+A04010</br>
+7040A0</br>
+808080</br>
+800000</br>
+204080</br>
+204080</br>
+204080</br>
+4000FF</br>
+800000</br>
+608090</br>
+A04010</br>
+7040A0</br>
+808080</br>
+FF0000</br>
+8F7030
+</td>
+<td>
+Contains the rgb color codes of the devil aura and some moves.</br>
+</br>
+You can use <a href="http://www.rapidtables.com/web/color/RGB_Color.htm">this tool</a> for easy color picking.
+</td>
+</tr>
+<tr>
+<td>
+UI.HP1Frame</br>
+UI.HP1Bar</br>
+UI.HP1Bg</br>
+UI.HP2Frame</br>
+UI.HP2Bar</br>
+UI.HP2Bg</br>
+UI.MPGauge</br>
+UI.StyleIcon</br>
+UI.RedOrbCounter</br>
+UI.Timer</br>
+UI.Objective</br>
+UI.WeaponIcon1</br>
+UI.WeaponIcon2</br>
+UI.StyleRank</br>
+UI.StyleBar</br>
+UI.RoomText</br>
+UI.RoomText.Step</br>
+UI.BossFrame</br>
+UI.BossBar</br>
+UI.BossBg</br>
+</td>
+<td>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+int</br>
+short</br>
+char</br>
+float</br>
+float</br>
+float</br>
+</td>
+<td>
+-40,-20</br>
+-40,-20</br>
+-40,-20</br>
+-40,-20</br>
+-40,-20</br>
+-40,-20</br>
+-40,-20</br>
+-40,-20</br>
+40,-20</br>
+-40,-20</br>
+-40,-20</br>
+-40,0</br>
+40,0</br>
+40,-20</br>
+507,58</br>
+-50,200</br>
+-2</br>
+0,20</br>
+0,20</br>
+0,20
+</td>
+<td>
+Sets the offset of various user interface elements.</br>
+</br>
+The format is x offset, y offset.
+</td>
+</tr>
+</table>
+</br>
+<span id="GAME"><b>GAME</b></span></br>
+</br>
+This section covers all gameplay related settings.</br>
+</br>
+<table class="listing">
+<tr>
+<th>Setting</th>
+<th>Data type</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AirHike.CoreAbility</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>This allows you to use Air Hike with all weapons once you have bought it for Rebellion. So it turns Air Hike into a core ability instead of a weapon specific one.</td>
+</tr>
+<tr>
+<td>
+Arcade</br>
+Arcade.Mission</br>
+Arcade.Mode</br>
+Arcade.Automatic</br>
+Arcade.Character</br>
+Arcade.BloodyPalace</br>
+Arcade.Equipment</br>
+Arcade.Costume</br>
+Arcade.HP</br>
+Arcade.MP</br>
+Arcade.Style</br>
+Arcade.Room</br>
+Arcade.Position</br>
+</td>
+<td>
+unsigned int</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+2x unsigned short</br>
+4x unsigned char</br>
+unsigned char</br>
+float</br>
+float</br>
+unsigned int</br>
+unsigned short</br>
+unsigned short
+</td>
+<td>
+0</br>
+14</br>
+4</br>
+0</br>
+0</br>
+0,0</br>
+06050100</br>
+2</br>
+20000</br>
+10000</br>
+2</br>
+10</br>
+0
+</td>
+<td>
+When activated it will take you directly to the room you specified,</br>
+bypassing all menus and applying all required variables automatically.</br>
+</br>
+Note: The format for Arcade.BloodyPalace is enable, stage.
+</td>
+</tr>
+<tr>
+<td>Artemis.InstantCharge</td>
+<td>unsigned int</td>
+<td>0</td>
+<td rowspan="2">Self-explanatory.</td>
+</tr>
+<tr>
+<td>Artemis.NormalShotMultiLockSwap</td>
+<td>unsigned int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>BossRush</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Skips the majority of a mission and takes you directly to the boss fight(s).</td>
+</tr>
+<tr>
+<td>
+Devil.AirHike</br>
+Devil.WallJump</br>
+Devil.WallRun</br>
+Devil.Dash.Lv1</br>
+Devil.Dash.Lv2</br>
+Devil.Dash.Lv3</br>
+Devil.SkyStar</br>
+Devil.AirTrick</br>
+Devil.AirTrick.Vergil</br>
+Devil.TrickUp</br>
+Devil.TrickDown
+</td>
+<td>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char
+</td>
+<td>
+1</br>
+1</br>
+1</br>
+1</br>
+2</br>
+3</br>
+1</br>
+1</br>
+1</br>
+1</br>
+1
+</td>
+<td>
+Contains mobility variables. These only apply while in devil form.</br>
+</br>
+Note: 0 means infinite.
+</td>
+</tr>
+<tr>
+<td>ForceEasyAutomaticTwosomeTime</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Self-explanatory.</td>
+</tr>
+<tr>
+<td>HideBeowulf</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>The weapon, duh.</td>
+</tr>
+<tr>
+<td>
+Human.AirHike</br>
+Human.WallJump</br>
+Human.WallRun</br>
+Human.Dash.Lv1</br>
+Human.Dash.Lv2</br>
+Human.Dash.Lv3</br>
+Human.SkyStar</br>
+Human.AirTrick</br>
+Human.AirTrick.Vergil</br>
+Human.TrickUp</br>
+Human.TrickDown
+</td>
+<td>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char
+</td>
+<td>
+1</br>
+1</br>
+1</br>
+1</br>
+2</br>
+3</br>
+1</br>
+1</br>
+1</br>
+1</br>
+1
+</td>
+<td>
+Contains mobility variables. These only apply while in human form.</br>
+</br>
+Note: 0 means infinite.
+</td>
+</tr>
+<tr>
+<td>InfiniteMP</td>
+<td>unsigned int</td>
+<td>0</td>
+<td rowspan="4">
+Infinite, infinite, infinite ...</br>
+</br>
+Come on, everything with infinite in front of it is pretty much self-explanatory.
+</td>
+</tr>
+<tr>
+<td>InfiniteRainStorm</td>
+<td>unsigned int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>InfiniteRoundTrip</td>
+<td>unsigned int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>InfiniteSwordPierce</td>
+<td>unsigned int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>LowBuffer</td>
+<td>char</td>
+<td>6</td>
+<td>
+Required button mash level to trigger Crazy Combo.</br>
+</br>
+Lower this value for easier Crazy Combos.
+</td>
+</tr>
+<tr>
+<td>MP.Deplete</td>
+<td>float</td>
+<td>11</td>
+<td>The value that is subtracted from the MP with every tick while in devil form.</td>
+</tr>
+<tr>
+<td>NoDemonForm</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Only disables the devil model, not the benefits.</td>
+</tr>
+<tr>
+<td>OrbReach</td>
+<td>float</td>
+<td>300</td>
+<td>Orb gathering range. No idea what the unit is.</td>
+</tr>
+<tr>
+<td>Revert.Delay</td>
+<td>float</td>
+<td>60</td>
+<td>The delay before you can use devil trigger again.</td>
+</tr>
+<tr>
+<td>
+Speed.Rebellion</br>
+Speed.Cerberus</br>
+Speed.AgniRudra</br>
+Speed.Nevan</br>
+Speed.Beowulf</br>
+Speed.Yamato</br>
+Speed.Beowulf.Vergil</br>
+Speed.ForceEdge</br>
+Speed.Yamato.NeroAngelo</br>
+Speed.Beowulf.NeroAngelo
+</td>
+<td>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+float</br>
+</td>
+<td>
+1.1</br>
+1.2</br>
+1.05</br>
+1.1</br>
+1.05</br>
+1.2</br>
+1.2</br>
+1.2</br>
+1</br>
+1</br>
+</td>
+<td>The character speed to apply while in devil form.</td>
+</tr>
+<tr>
+<td>StyleSwitcher</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>
+The very heart of this mod.</br>
+Allows you to switch on the fly between all six styles with Dante and between Dark Slayer and Quicksilver with Vergil.</br>
+</br>
+Note: Doppelganger is activated by pressing Change Target + Default Camera together.
+</td>
+</tr>
+<tr>
+<td>StyleSwitcher.Cancel</td>
+<td>unsigned int</td>
+<td>0x1000</td>
+<td>When triggered resets the motion state allowing you to cancel a move. The value here is the <a href="#Commands">command</a> id.</td>
+</tr>
+<tr>
+<td>StyleSwitcher.ChronoSwords</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Summoned Swords will no longer hurl instantly at the enemy while Quicksilver is active.</td>
+</tr>
+<tr>
+<td>StyleSwitcher.NoDoubleTap</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Don't apply Quicksilver when activating the same style twice.</td>
+</tr>
+<tr>
+<td>WeaponSwitcher</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>
+The wet dream of many, manifested at long last. The amount of complexity involved with this one is awe-inspiring.</br>
+Allows you to switch on the fly between all 10 available weapons.
+</td>
+</tr>
+<tr>
+<td>WeaponSwitcher.Devil</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Which <a href="#DevilForms">devil form</a> to use.</td>
+</tr>
+<tr>
+<td>
+WeaponSwitcher.Melee</br>
+WeaponSwitcher.Ranged
+</td>
+<td>
+5x unsigned char</br>
+5x unsigned char
+<td>
+00,01,02,03,04</br>
+05,06,07,08,09
+</td>
+</td>
+<td>
+The equipped <a href="#Weapons">weapons</a>.</br>
+</br>
+Note: You can order the weapons however you want as long as they are of the same type.
+</td>
+</tr>
+<tr>
+<td>WeaponSwitcher.Sword</td>
+<td>unsigned int</td>
+<td>1</td>
+<td>Which <a href="#Swords">sword model</a> to use.</td>
+</tr>
+<tr>
+<td>WeaponSwitcher.Timeout</td>
+<td>float</td>
+<td>6</td>
+<td>The timeout between each switch where button input is ignored.</td>
+</tr>
+</table>
+</br>
+<span id="INPUT"><b>INPUT</b></span></br>
+</br>
+This section covers all input related settings.</br>
+</br>
+<table class="listing">
+<tr>
+<th>Setting</th>
+<th>Data type</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>DisableLockOnToggle</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>
+You can actually toggle the Lock-On display ingame by holding Change Target, this option will disable it.</br>
+</br>
+Note: Only affects gamepad users.
+</td>
+</tr>
+<tr>
+<td>
+Hotkeys</br>
+Hotkeys.RestartRoom</br>
+Hotkeys.NoDeath</br>
+Hotkeys.OneHitKill</br>
+Hotkeys.HideHUD</br>
+Hotkeys.Bloom</br>
+Hotkeys.Noir
+</td>
+<td>
+unsigned int</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+unsigned char</br>
+</td>
+<td>
+1</br>
+70</br>
+71</br>
+72</br>
+73</br>
+74</br>
+75</br>
+</td>
+<td>
+The hotkey's function should be fairly obvious, it activates or toggles something in reference to its name.</br>
+</br>
+The values are <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx">Virtual-Key Codes</a>.</br>
+</br>
+If you want to disable a specific hotkey set its value to 00.
+</td>
+</tr>
+<tr>
+<td>
+Keyboard.L2</br>
+Keyboard.R2</br>
+Keyboard.L1</br>
+Keyboard.R1</br>
+Keyboard.Triangle</br>
+Keyboard.Circle</br>
+Keyboard.Cross</br>
+Keyboard.Square</br>
+Keyboard.Select</br>
+Keyboard.L3</br>
+Keyboard.R3</br>
+Keyboard.Start</br>
+Keyboard.D-Pad.Up</br>
+Keyboard.D-Pad.Right</br>
+Keyboard.D-Pad.Down</br>
+Keyboard.D-Pad.Left</br>
+Keyboard.LeftAnalogStick.Up</br>
+Keyboard.LeftAnalogStick.Right</br>
+Keyboard.LeftAnalogStick.Down</br>
+Keyboard.LeftAnalogStick.Left</br>
+Keyboard.RightAnalogStick.Up</br>
+Keyboard.RightAnalogStick.Right</br>
+Keyboard.RightAnalogStick.Down</br>
+Keyboard.RightAnalogStick.Left
+</td>
+<td>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char</br>
+2x unsigned char
+</td>
+<td>
+51,51</br>
+45,45</br>
+4E,4E</br>
+20,20</br>
+49,08</br>
+4C,4C</br>
+4B,0D</br>
+4A,4A</br>
+4D,4D</br>
+4F,4F</br>
+50,50</br>
+1B,1B</br>
+31,26</br>
+34,27</br>
+33,28</br>
+32,25</br>
+57,57</br>
+44,44</br>
+53,53</br>
+41,41</br>
+26,00</br>
+27,00</br>
+28,00</br>
+25,00
+</td>
+<td>Same as above. The only additional thing you need to know is that the first row (value before the comma) is active only ingame and the second (value after the comma) is active only in menus.</td>
+</tr>
+</table>
+</br>
+<span id="SOUND"><b>SOUND</b></span></br>
+</br>
+This section covers all sound related settings.</br>
+</br>
+<table class="listing">
+<tr>
+<th>Setting</th>
+<th>Data type</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BGM</td>
+<td>
+unsigned int</br>
+const char</br>
+unsigned int</br>
+float</br>
+float
+</td>
+<td></td>
+<td>
+An array that contains BGM related variables.</br>
+</br>
+The format is id, "path", enableLoop, loopBegin, loopEnd.</br>
+You can view loopBegin and loopEnd as when and where to loop back to. Both use seconds.milliseconds as format.
+</td>
+</tr>
+<tr>
+<td>DisableSoundDriver</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>This will disable the sound driver entirely, effectively removing all BGM engine related fps drops.</td>
+</tr>
+<tr>
+<td>DisableStageSE</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Disables all stage sound effects, getting rid of that pesky, looping water sound effect as well.</td>
+</tr>
+<tr>
+<td>DisableSystemSE</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Self-explanatory.</td>
+</tr>
+<tr>
+<td>ForceMode0</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>The game has two modes to deal with BGM files. By default mode 1 is used predominantly. For most users however this mode introduces large fps drops when dealing with more than 1 file. These fps drops do not occur when mode 0 is used. So we can alleviate this by forcing mode 0 at all times, which is exactly what this setting does.</td>
+</tr>
+<tr>
+<td>
+Volume.BGM</br>
+Volume.SE
+</td>
+<td>
+unsigned char</br>
+unsigned char
+</td>
+<td>
+100</br>
+127
+</td>
+<td>
+Self-explanatory, ranges from 0 to 100.</br>
+Self-explanatory, ranges from 0 to 127.
+</td>
+</tr>
+</table>
+</br>
+<span id="SYSTEM"><b>SYSTEM</b></br>
+</br>
+This section covers all system related settings.</br>
+</br>
+<table class="listing">
+<tr>
+<th>Setting</th>
+<th>Data type</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>HideCursor</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Self-explanatory.</td>
+</tr>
+<tr>
+<td>InvertCamera</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Inverts the camera's X-axis when using the Right Analog Stick.</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>unsigned int</td>
+<td>1</td>
+<td>For a list of languages, take a look at <a href="#Languages">Languages</a>.</td>
+</tr>
+<tr>
+<td>SkipCutscenes</td>
+<td>unsigned int</td>
+<td>0</td>
+<td rowspan="2">Self-explanatory.</td>
+</tr>
+<tr>
+<td>SkipIntro</td>
+<td>unsigned int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Subtitles</td>
+<td>unsigned int</td>
+<td>1</td>
+<td>For a list of languages, take a look at <a href="#Languages">Languages</a>.</td>
+</tr>
+<tr>
+<td>Subtitles.Enable</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Self-explanatory.</td>
+</tr>
+</table>
+</br>
+<h3><span id="Variables">Variables</span></h3>
+<span id="DisplayModes"><b>Display modes</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Mode</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Windowed</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Fullscreen</td>
+</tr>
+</table>
+</br>
+<span id="Missions"><b>Missions</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Mission</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Play all movies</td>
+</tr>
+<tr>
+<td>1</td>
+<td>A crazy party</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The blood link</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The Devils' tower</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The uninvited one</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Of devils and swords</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Family ties</td>
+</tr>
+<tr>
+<td>7</td>
+<td>A chance meeting</td>
+</tr>
+<tr>
+<td>8</td>
+<td>A renewed fear</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Faded memories</td>
+</tr>
+<tr>
+<td>10</td>
+<td>The job</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Revenge</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Hunter and hunted</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Chaos' warm welcome</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Drive!</td>
+</tr>
+<tr>
+<td>15</td>
+<td>The gatecrasher</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Win or lose</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Inner-demons</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Invading hell</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Forces collide</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Screaming souls</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Bloody Palace</td>
+</tr>
+</table>
+</br>
+<span id="Modes"><b>Modes</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Mode</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Easy</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Very Hard</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dante Must Die</td>
+</tr>
+</table>
+</br>
+<span id="Characters"><b>Characters</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Character</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Dante</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Vergil Mission 19</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lady</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Vergil</td>
+</tr>
+</table>
+</br>
+<span id="Styles"><b>Styles</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Style</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Swordmaster</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Gunslinger</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Trickster, Dark Slayer</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Royalguard</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quicksilver</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Doppelganger</td>
+</tr>
+</table>
+</br>
+<span id="Weapons"><b>Weapons</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Weapon</th>
+</tr>
+<tr>
+<td>00</td>
+<td>Rebellion</td>
+</tr>
+<tr>
+<td>01</td>
+<td>Cerberus</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Agni Rudra</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Nevan</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Beowulf</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Ebony Ivory</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Shotgun</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Artemis</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Spiral</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Kalina Ann</td>
+</tr>
+<tr>
+<td>FF</td>
+<td>Skip Slot</td>
+</tr>
+</table>
+</br>
+<span id="DevilForms"><b>Devil forms</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Model</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Rebellion</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Cerberus</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Agni Rudra</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Nevan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Beowulf</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Force Edge</td>
+</tr>
+</table>
+</br>
+<span id="Swords"><b>Swords</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Model</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Rebellion sealed</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Rebellion</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Force Edge</td>
+</tr>
+</table>
+</br>
+<span id="Languages"><b>Languages</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Language</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Japanese</td>
+</tr>
+<tr>
+<td>1</td>
+<td>English</td>
+</tr>
+<tr>
+<td>2</td>
+<td>French</td>
+</tr>
+<tr>
+<td>3</td>
+<td>German</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Italian</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Korean</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Simplified Chinese</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Traditional Chinese</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Russian</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Polish</td>
+</tr>
+</table>
+</br>
+<span id="Rooms"><b>Rooms</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Room</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Dante's Office</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Dante's Office: Front</td>
+</tr>
+<tr>
+<td>2</td>
+<td>66 Slum Avenue</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bullseye</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Love Planet</td>
+</tr>
+<tr>
+<td>5</td>
+<td>13th Avenue</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ice Guardian's Chamber</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Love Planet</td>
+</tr>
+<tr>
+<td>8</td>
+<td>13th Avenue: Aftermath</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Dante's Office: Front</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Dante's Office: Front</td>
+</tr>
+<tr>
+<td>11</td>
+<td>66 Slum Avenue</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Credits</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Chamber of Echoes</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Entranceway</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Living Statue Room</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Silence Statuary</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Chamber of Sins</td>
+</tr>
+<tr>
+<td>105</td>
+<td>Cursed Skull Chamber</td>
+</tr>
+<tr>
+<td>106</td>
+<td>Sun & Moon Chamber</td>
+</tr>
+<tr>
+<td>107</td>
+<td>Ice Guardian's Chamber</td>
+</tr>
+<tr>
+<td>108</td>
+<td>Entranceway</td>
+</tr>
+<tr>
+<td>109</td>
+<td>Chamber of Sins</td>
+</tr>
+<tr>
+<td>110</td>
+<td>Incandescent Space</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Giantwalker Chamber</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Endless Infernum</td>
+</tr>
+<tr>
+<td>113</td>
+<td>Surge of Fortunas</td>
+</tr>
+<tr>
+<td>114</td>
+<td>Heavenrise Chamber</td>
+</tr>
+<tr>
+<td>115</td>
+<td>The Divine Library</td>
+</tr>
+<tr>
+<td>116</td>
+<td>Incandescent Space</td>
+</tr>
+<tr>
+<td>117</td>
+<td>Endless Infernum</td>
+</tr>
+<tr>
+<td>118</td>
+<td>Surge of Fortunas</td>
+</tr>
+<tr>
+<td>119</td>
+<td>High-fly Zone</td>
+</tr>
+<tr>
+<td>120</td>
+<td>Azure Garden</td>
+</tr>
+<tr>
+<td>121</td>
+<td>Firestorm Chamber</td>
+</tr>
+<tr>
+<td>122</td>
+<td>Mute Goddess' Chamber</td>
+</tr>
+<tr>
+<td>123</td>
+<td>Chamber of 3 Trials</td>
+</tr>
+<tr>
+<td>124</td>
+<td>Trial of the Warrior</td>
+</tr>
+<tr>
+<td>125</td>
+<td>Trial of Skill</td>
+</tr>
+<tr>
+<td>126</td>
+<td>Trial of Wisdom</td>
+</tr>
+<tr>
+<td>127</td>
+<td>The Dark Corridor</td>
+</tr>
+<tr>
+<td>128</td>
+<td>God-cube Chamber</td>
+</tr>
+<tr>
+<td>129</td>
+<td>Tri-sealed Antechamber</td>
+</tr>
+<tr>
+<td>130</td>
+<td>Trial of the Warrior</td>
+</tr>
+<tr>
+<td>131</td>
+<td>Trial of Skill</td>
+</tr>
+<tr>
+<td>132</td>
+<td>Trial of Wisdom</td>
+</tr>
+<tr>
+<td>133</td>
+<td>The Dark Corridor</td>
+</tr>
+<tr>
+<td>134</td>
+<td>Pitch-black Void</td>
+</tr>
+<tr>
+<td>135</td>
+<td>Skull Spire</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Tranquil Souls Room</td>
+</tr>
+<tr>
+<td>137</td>
+<td>Lift Room</td>
+</tr>
+<tr>
+<td>138</td>
+<td>Moonlight Mile</td>
+</tr>
+<tr>
+<td>139</td>
+<td>Apparition Incarnate</td>
+</tr>
+<tr>
+<td>140</td>
+<td>Pitch-black Void</td>
+</tr>
+<tr>
+<td>141</td>
+<td>Skull Spire</td>
+</tr>
+<tr>
+<td>142</td>
+<td>Peak of Darkness</td>
+</tr>
+<tr>
+<td>143</td>
+<td>Dark-pact Chamber</td>
+</tr>
+<tr>
+<td>144</td>
+<td>Peak of Darkness</td>
+</tr>
+<tr>
+<td>145</td>
+<td>Astral Chamber</td>
+</tr>
+<tr>
+<td>146</td>
+<td>Waking Sun Chamber</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Forbidden Land: Front</td>
+</tr>
+<tr>
+<td>201</td>
+<td>The Rotating Bridge</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Provisions Storeroom</td>
+</tr>
+<tr>
+<td>203</td>
+<td>Subterranean Garden</td>
+</tr>
+<tr>
+<td>204</td>
+<td>Subground Water Vein</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Rounded Pathway</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Subterranean Lake</td>
+</tr>
+<tr>
+<td>207</td>
+<td>Rounded Pathway</td>
+</tr>
+<tr>
+<td>208</td>
+<td>Provisions Storeroom</td>
+</tr>
+<tr>
+<td>209</td>
+<td>Limestone Cavern</td>
+</tr>
+<tr>
+<td>210</td>
+<td>Sunken Opera House</td>
+</tr>
+<tr>
+<td>211</td>
+<td>Marble Throughway</td>
+</tr>
+<tr>
+<td>212</td>
+<td>Gears of Madness</td>
+</tr>
+<tr>
+<td>213</td>
+<td>Altar of Evil Pathway</td>
+</tr>
+<tr>
+<td>214</td>
+<td>Altar of Evil</td>
+</tr>
+<tr>
+<td>215</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>216</td>
+<td>Temperance Wagon</td>
+</tr>
+<tr>
+<td>217</td>
+<td>Torture Chamber</td>
+</tr>
+<tr>
+<td>218</td>
+<td>Spiral Corridor</td>
+</tr>
+<tr>
+<td>219</td>
+<td>Devilsprout Lift</td>
+</tr>
+<tr>
+<td>220</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>221</td>
+<td>Subterran Garden</td>
+</tr>
+<tr>
+<td>222</td>
+<td>Upper Subterran Garden</td>
+</tr>
+<tr>
+<td>223</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>224</td>
+<td>Rounded Pathway</td>
+</tr>
+<tr>
+<td>225</td>
+<td>Subterran Lake</td>
+</tr>
+<tr>
+<td>226</td>
+<td>Top Subterria Lack</td>
+</tr>
+<tr>
+<td>227</td>
+<td>Rounded Pathway</td>
+</tr>
+<tr>
+<td>228</td>
+<td>Underground Arena</td>
+</tr>
+<tr>
+<td>229</td>
+<td>Effervescence Corridor</td>
+</tr>
+<tr>
+<td>230</td>
+<td>Spiral Staircase</td>
+</tr>
+<tr>
+<td>231</td>
+<td>Top Obsidian Path</td>
+</tr>
+<tr>
+<td>232</td>
+<td>Obsidian Path</td>
+</tr>
+<tr>
+<td>233</td>
+<td>Vestibule</td>
+</tr>
+<tr>
+<td>234</td>
+<td>Lair of Judgement</td>
+</tr>
+<tr>
+<td>235</td>
+<td>Underwater Elevator</td>
+</tr>
+<tr>
+<td>236</td>
+<td>Hell's Highway</td>
+</tr>
+<tr>
+<td>237</td>
+<td>Lair of Judgement Ruins</td>
+</tr>
+<tr>
+<td>238</td>
+<td>Underground Arena</td>
+</tr>
+<tr>
+<td>239</td>
+<td>Temperance Wagon</td>
+</tr>
+<tr>
+<td>240</td>
+<td>Temperance Wagon</td>
+</tr>
+<tr>
+<td>241</td>
+<td>Lux-luminous Corridor</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Leviathan's Stomach</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>302</td>
+<td>Leviathan's Heartcore</td>
+</tr>
+<tr>
+<td>303</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>304</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>305</td>
+<td>Leviathan's Retina</td>
+</tr>
+<tr>
+<td>306</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>307</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>308</td>
+<td>Leviathan's Stomach</td>
+</tr>
+<tr>
+<td>309</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>310</td>
+<td>Leviathan's Heartcore (Debug Room)</td>
+</tr>
+<tr>
+<td>311</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>312</td>
+<td>Leviathan's Intestines</td>
+</tr>
+<tr>
+<td>313</td>
+<td>Leviathan's Retina</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Unsacred Hellgate</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Damned Chess Board</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Road to Despair</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Lost Souls Nirvana</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Infinity Nirvana</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Nirvana of Illusions</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Room of Fallen Ones</td>
+</tr>
+<tr>
+<td>407</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>408</td>
+<td>End of the Line</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Forbidden Nirvana</td>
+</tr>
+<tr>
+<td>410</td>
+<td>No use</td>
+</tr>
+<tr>
+<td>411</td>
+<td>Unsacred Hellgate</td>
+</tr>
+<tr>
+<td>412</td>
+<td>Ice Guardian Reborn</td>
+</tr>
+<tr>
+<td>413</td>
+<td>Giantwalker Reborn</td>
+</tr>
+<tr>
+<td>414</td>
+<td>Firestorm Reborn</td>
+</tr>
+<tr>
+<td>415</td>
+<td>Lightning Witch Reborn</td>
+</tr>
+<tr>
+<td>416</td>
+<td>Lightbeast Reborn</td>
+</tr>
+<tr>
+<td>417</td>
+<td>Timesteed Reborn</td>
+</tr>
+<tr>
+<td>418</td>
+<td>Deathvoid Reborn</td>
+</tr>
+<tr>
+<td>419</td>
+<td>Evil God-beast Reborn</td>
+</tr>
+<tr>
+<td>420</td>
+<td>Demon Army Reborn</td>
+</tr>
+<tr>
+<td>421</td>
+<td>Forbidden Nirvana</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Demon Clown Chamber</td>
+</tr>
+<tr>
+<td>423</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>424</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>425</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>426</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>427</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>428</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>430</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>431</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>432</td>
+<td>Bloody Palace</td>
+</tr>
+<tr>
+<td>433</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>434</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>435</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>436</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>437</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>438</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>439</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>440</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>441</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>442</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>443</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>444</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>445</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>446</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>447</td>
+<td>Bloody Palace Boss</td>
+</tr>
+<tr>
+<td>448</td>
+<td>Demon Clown Chamber</td>
+</tr>
+<tr>
+<td>449</td>
+<td>Demon Clown Chamber</td>
+</tr>
+<tr>
+<td>600</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>601</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>602</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>603</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>604</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>605</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>606</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>607</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>608</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>609</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>610</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>611</td>
+<td>Secret Mission</td>
+</tr>
+<tr>
+<td>900</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>901</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>902</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>903</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>904</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>905</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>906</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>907</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>908</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>909</td>
+<td>Debug Room</td>
+</tr>
+<tr>
+<td>910</td>
+<td>Debug Room</td>
+</tr>
+</table>
+</br>
+<span id="Moves"><b>Moves</b></span></br>
+</br>
+<span id="Dante"><b>Dante</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Move</th>
+</tr>
+<tr>
+<td>00</td>
+<td>Idle</td>
+</tr>
+</table>
+</br>
+<b>Rebellion</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>01</td>
+<td>Combo I Part 1</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Combo I Part 2</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Combo I Part 3</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Combo II Part 1</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Combo II Part 2</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Helm Breaker</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Stinger Lv 1</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Stinger Lv 2</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Leap</td>
+</tr>
+<tr>
+<td>0A</td>
+<td>High Time Part 1</td>
+</tr>
+<tr>
+<td>0B</td>
+<td>High Time Part 2</td>
+</tr>
+<tr>
+<td>0C</td>
+<td>Kick</td>
+</tr>
+<tr>
+<td>0D</td>
+<td>Drive</td>
+</tr>
+<tr>
+<td>0E</td>
+<td>Million Stab</td>
+</tr>
+<tr>
+<td>0F</td>
+<td>Sword Pierce Throw</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Prop Shredder Part 1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Killer Bee</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Kick</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Aerial Rave Part 1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Aerial Rave Part 2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Aerial Rave Part 3</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Aerial Rave Part 4</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Sword Pierce Return</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Prop Shredder Part 2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Drive</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Dance Macabre Part 1</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>Dance Macabre Part 2</td>
+</tr>
+<tr>
+<td>CA</td>
+<td>Dance Macabre Part 3</td>
+</tr>
+<tr>
+<td>CB</td>
+<td>Dance Macabre Part 4</td>
+</tr>
+<tr>
+<td>CC</td>
+<td>Dance Macabre Part 5</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>Dance Macabre Part 6</td>
+</tr>
+<tr>
+<td>CE</td>
+<td>Dance Macabre Part 7</td>
+</tr>
+<tr>
+<td>CF</td>
+<td>Dance Macabre Part 8</td>
+</tr>
+<tr>
+<td>D0</td>
+<td>Dance Macabre Part 9</td>
+</tr>
+</table>
+</br>
+<b>Cerberus</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>1E</td>
+<td>Combo I Part 1</td>
+</tr>
+<tr>
+<td>1F</td>
+<td>Combo I Part 2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Combo I Part 3</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Combo I Part 4</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Combo I Part 5</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Combo II Part 1</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Combo II Part 2</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Windmill</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Revolver Lv 1</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Revolver Lv 2</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Swing</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Satellite</td>
+</tr>
+<tr>
+<td>2A</td>
+<td>Flicker</td>
+</tr>
+<tr>
+<td>2B</td>
+<td>Flicker</td>
+</tr>
+<tr>
+<td>2C</td>
+<td>Crystal</td>
+</tr>
+<tr>
+<td>2D</td>
+<td>Million Carats</td>
+</tr>
+<tr>
+<td>2E</td>
+<td>Ice Age</td>
+</tr>
+</table>
+</br>
+<b>Agni Rudra</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>32</td>
+<td>Combo I Part 1</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Combo I Part 2</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Combo I Part 3</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Combo I Part 4</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Combo I Part 5</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Combo II Part 1</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Combo II Part 2</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Combo III Part 1</td>
+</tr>
+<tr>
+<td>3A</td>
+<td>Jet-Stream Lv 1</td>
+</tr>
+<tr>
+<td>3B</td>
+<td>Jet-Stream Lv 2</td>
+</tr>
+<tr>
+<td>3C</td>
+<td>Jet-Stream Lv 3</td>
+</tr>
+<tr>
+<td>3D</td>
+<td>Aerial Cross</td>
+</tr>
+<tr>
+<td>3E</td>
+<td>Whirlwind Lv 1</td>
+</tr>
+<tr>
+<td>3F</td>
+<td>Whirlwind Lv 2</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Million Slash</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Crossed Swords</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Crawler</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Twister</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Sky Dance Part 1</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Sky Dance Part 2</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Sky Dance Part 3</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Tempest</td>
+</tr>
+</table>
+</br>
+<b>Nevan</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>50</td>
+<td>Tune-up Part 1</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Combo I - III</td>
+</tr>
+<tr>
+<td>52</td>
+<td>Combo I - III</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Jam Session</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Bat Rift</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Bat Rift</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Reverb Shock Lv 1</td>
+</tr>
+<tr>
+<td>57</td>
+<td>Reverb Shock Lv 2</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Air Play</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Slash</td>
+</tr>
+<tr>
+<td>5A</td>
+<td>Air Slash Part 1</td>
+</tr>
+<tr>
+<td>5B</td>
+<td>Air Slash Part 2</td>
+</tr>
+<tr>
+<td>5C</td>
+<td>Feedback</td>
+</tr>
+<tr>
+<td>5D</td>
+<td>Crazy Roll</td>
+</tr>
+<tr>
+<td>5E</td>
+<td>Distortion</td>
+</tr>
+<tr>
+<td>5F</td>
+<td>Vortex</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Thunder Bolt</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Tune-up Part 2</td>
+</tr>
+</table>
+</br>
+<b>Beowulf</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>6E</td>
+<td>Combo I Part 1</td>
+</tr>
+<tr>
+<td>6F</td>
+<td>Combo I Part 2</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Combo I Part 3</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Combo II Part 1</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Combo II Part 2</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Hyper Fist</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Killer Bee</td>
+</tr>
+<tr>
+<td>75</td>
+<td>Beast Uppercut</td>
+</tr>
+<tr>
+<td>76</td>
+<td>Beast Uppercut</td>
+</tr>
+<tr>
+<td>77</td>
+<td>Rising Dragon Part 1</td>
+</tr>
+<tr>
+<td>78</td>
+<td>Rising Dragon Part 2</td>
+</tr>
+<tr>
+<td>79</td>
+<td>Straight Lv 1</td>
+</tr>
+<tr>
+<td>7A</td>
+<td>Straight Lv 2</td>
+</tr>
+<tr>
+<td>7B</td>
+<td>Zodiac</td>
+</tr>
+<tr>
+<td>7C</td>
+<td>Volcano</td>
+</tr>
+<tr>
+<td>7D</td>
+<td>Air Volcano</td>
+</tr>
+<tr>
+<td>7E</td>
+<td>Tornado</td>
+</tr>
+<tr>
+<td>7F</td>
+<td>The Hammer</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Real Impact</td>
+</tr>
+</table>
+</br>
+<b>Ebony Ivory</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>82</td>
+<td>Normal Shot</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Charged Shot</td>
+</tr>
+<tr>
+<td>84</td>
+<td>Air Normal Shot</td>
+</tr>
+<tr>
+<td>85</td>
+<td>Air Charged Shot</td>
+</tr>
+<tr>
+<td>86</td>
+<td>Twosome Time</td>
+</tr>
+<tr>
+<td>87</td>
+<td>Rain Storm</td>
+</tr>
+<tr>
+<td>88</td>
+<td>Wild Stomp</td>
+</tr>
+</table>
+</br>
+<b>Shotgun</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>8C</td>
+<td>Normal Shot</td>
+</tr>
+<tr>
+<td>8D</td>
+<td>Charged Shot</td>
+</tr>
+<tr>
+<td>8E</td>
+<td>Air Normal Shot</td>
+</tr>
+<tr>
+<td>8F</td>
+<td>Air Charged Shot</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Fireworks</td>
+</tr>
+<tr>
+<td>91</td>
+<td>Air Fireworks</td>
+</tr>
+<tr>
+<td>92</td>
+<td>Gun Stinger</td>
+</tr>
+<tr>
+<td>93</td>
+<td>Point Blank</td>
+</tr>
+</table>
+</br>
+<b>Artemis</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>96</td>
+<td>Normal Shot</td>
+</tr>
+<tr>
+<td>97</td>
+<td>Air Normal Shot</td>
+</tr>
+<tr>
+<td>98</td>
+<td>Multi-lock</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Air Multi-lock</td>
+</tr>
+<tr>
+<td>9A</td>
+<td>Sphere</td>
+</tr>
+<tr>
+<td>9B</td>
+<td>Acid Rain</td>
+</tr>
+</table>
+</br>
+<b>Spiral</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>A0</td>
+<td>Normal Shot</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>Sniper</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Trick Shot</td>
+</tr>
+</table>
+</br>
+<b>Kalina Ann</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>AA</td>
+<td>Normal Shot</td>
+</tr>
+<tr>
+<td>AB</td>
+<td>Hysteric</td>
+</tr>
+<tr>
+<td>AC</td>
+<td>Grapple</td>
+</tr>
+</table>
+</br>
+<b>Trickster</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>B4</td>
+<td>Dash</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>Sky Star</td>
+</tr>
+<tr>
+<td>B6</td>
+<td>Air Trick</td>
+</tr>
+<tr>
+<td>B7</td>
+<td>Wall Hike</td>
+</tr>
+</table>
+</br>
+<b>Royalguard</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>BE</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>BF</td>
+<td>Perfect Release</td>
+</tr>
+<tr>
+<td>C0</td>
+<td>Counter Perfect Release</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Counter Release</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Air Release</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Air Perfect Release</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Air Counter Perfect Release</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Air Counter Release</td>
+</tr>
+</table>
+</br>
+<span id="Vergil"><b>Vergil</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Move</th>
+</tr>
+<tr>
+<td>00</td>
+<td>Idle</td>
+</tr>
+</table>
+</br>
+<b>Yamato</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>01</td>
+<td>Combo Part 1</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Combo Part 2</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Combo Part 3</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Rapid Slash Lv 1</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Rapid Slash Lv 2</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Leap</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Upper Slash Part 1</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Upper Slash Part 2</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Judgement Cut Lv 1</td>
+</tr>
+<tr>
+<td>0A</td>
+<td>Judgement Cut Lv 2</td>
+</tr>
+<tr>
+<td>0B</td>
+<td>Aerial Rave Part 1</td>
+</tr>
+<tr>
+<td>0C</td>
+<td>Aerial Rave Part 2</td>
+</tr>
+</table>
+</br>
+<b>Beowulf</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>14</td>
+<td>Combo Part 1</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Combo Part 2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Combo Part 3</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Starfall Lv 1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Starfall Lv 2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Rising Sun</td>
+</tr>
+<tr>
+<td>1A</td>
+<td>Lunar Phase Lv 1</td>
+</tr>
+<tr>
+<td>1B</td>
+<td>Lunar Phase Lv 2</td>
+</tr>
+</table>
+</br>
+<b>Force Edge</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>1E</td>
+<td>Combo Part 1</td>
+</tr>
+<tr>
+<td>1F</td>
+<td>Combo Part 2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Combo Part 3</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Combo Part 4</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Helm Breaker Lv 1</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Helm Breaker Lv 2</td>
+</tr>
+<tr>
+<td>24</td>
+<td>High Time Part 1</td>
+</tr>
+<tr>
+<td>25</td>
+<td>High Time Part 2</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Stinger Lv 1</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Stinger Lv 2</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Round Trip</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Kick</td>
+</tr>
+</table>
+</br>
+<b>Dark Slayer</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>3C</td>
+<td>Air Trick</td>
+</tr>
+<tr>
+<td>3D</td>
+<td>Trick Up</td>
+</tr>
+<tr>
+<td>3E</td>
+<td>Trick Down</td>
+</tr>
+</table>
+</br>
+<b>Nero Angelo Yamato</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>46</td>
+<td>Combo Part 1</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Combo Part 2</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Combo Part 3</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Helm Breaker</td>
+</tr>
+<tr>
+<td>4A</td>
+<td>High Time Part 1</td>
+</tr>
+<tr>
+<td>4B</td>
+<td>High Time Part 2</td>
+</tr>
+<tr>
+<td>4C</td>
+<td>Stinger</td>
+</tr>
+<tr>
+<td>4D</td>
+<td>Meteor</td>
+</tr>
+</table>
+</br>
+<b>Nero Angelo Beowulf</b></br>
+</br>
+<table class="listing2">
+<tr>
+<td>5A</td>
+<td>Combo Part 1</td>
+</tr>
+<tr>
+<td>5B</td>
+<td>Combo Part 2</td>
+</tr>
+<tr>
+<td>5C</td>
+<td>Combo Part 3</td>
+</tr>
+<tr>
+<td>5D</td>
+<td>Starfall</td>
+</tr>
+<tr>
+<td>5E</td>
+<td>Kick 13</td>
+</tr>
+<tr>
+<td>5F</td>
+<td>Magma Drive</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Meteor</td>
+</tr>
+</table>
+</br>
+<span id="Commands"><b>Commands</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Command</th>
+</tr>
+<tr>
+<td>0001</td>
+<td>Change Gun</td>
+</tr>
+<tr>
+<td>0002</td>
+<td>Change Devil Arms</td>
+</tr>
+<tr>
+<td>0004</td>
+<td>Devil Trigger</td>
+</tr>
+<tr>
+<td>0008</td>
+<td>Lock-On</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>Melee Attack</td>
+</tr>
+<tr>
+<td>0020</td>
+<td>Style Action</td>
+</tr>
+<tr>
+<td>0040</td>
+<td>Jump</td>
+</tr>
+<tr>
+<td>0080</td>
+<td>Shoot</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>Taunt</td>
+</tr>
+<tr>
+<td>0200</td>
+<td>Change Target</td>
+</tr>
+<tr>
+<td>0400</td>
+<td>Default Camera</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>Item Screen</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>Map Screen</td>
+</tr>
+<tr>
+<td>4000</td>
+<td>Equip Screen</td>
+</tr>
+<tr>
+<td>8000</td>
+<td>File Screen</td>
+</tr>
+</table>
+</br>
+<span id="Tilt"><b>Tilt</b></span></br>
+</br>
+<table class="listing2">
+<tr>
+<th>Id</th>
+<th>Direction</th>
+</tr>
+<tr>
+<td>00</td>
+<td>Up</td>
+</tr>
+<tr>
+<td>01</td>
+<td>Down</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>FF</td>
+<td>Stationary</td>
+</tr>
+</table>
+</br>
+<h3><span id="Tutorials">Tutorials</span></h3>
+<span id="ScriptEngine"><b>Script Engine</b></span></br>
+<ul>
+<li>Start <a href="http://www.cheatengine.org/">Cheat Engine</a> and click on the little blinking computer icon on the top left of the window.</li>
+<li>Click on Open file and select either move.dat if you want to replace moves or motion.dat if you want to overwrite motion states.</li>
+<li>Now click on Memory View.</li>
+You'll be presented with what I assume will just be a bunch of mambo jumbo to you, but don't despair.
+<li>Press Ctrl + A to bring up the Auto Assemble window.</li>
+<li>Copy and paste the corresponding template into the window.</li>
+</br>
+move.dat</br>
+</br>
+<div class="code">
+[ENABLE]</br>
+define(GetBinding,0)</br>
+define(GetInput,6)</br>
+define(GetTilt,C)</br>
+define(GetCharacterIndex,12)</br>
+define(GetDevilState,18)</br>
+define(GetDoppelgangerState,1E)</br>
+define(GetQuicksilverState,24)</br>
+</br>
+40:</br>
+mov [esi+00002914],cl</br>
+ret</br>
+</br>
+[DISABLE]
+</div>
+</br>
+</br>
+motion.dat</br>
+</br>
+<div class="code">
+[ENABLE]</br>
+define(GetBinding,0)</br>
+define(GetInput,6)</br>
+define(GetTilt,C)</br>
+define(GetCharacterIndex,12)</br>
+define(GetDevilState,18)</br>
+define(GetDoppelgangerState,1E)</br>
+define(GetQuicksilverState,24)</br>
+</br>
+40:</br>
+mov [ecx+000027E0],edx</br>
+ret</br>
+</br>
+[DISABLE]
+</div>
+</br>
+</br>
+Ultimately this is all that is required to emulate the default behaviour and not crash the game.</br>
+However the whole point of the script engine is to allow you to create and use custom scripts.</br>
+So let's take a closer look at some examples.
+</ul>
+<span id="ScriptEngineExamples"><b>Examples</b></span></br>
+</br>
+<b>Air Lunar Phase</b></br>
+</br>
+In this example we are going to replace Starfall with Lunar Phase if certain conditions are met.</br>
+</br>
+Let's have a look at the entire code first.</br>
+</br>
+<div class="code">
+[ENABLE]</br>
+define(GetBinding,0)</br>
+define(GetInput,6)</br>
+define(GetTilt,C)</br>
+define(GetCharacterIndex,12)</br>
+define(GetDevilState,18)</br>
+define(GetDoppelgangerState,1E)</br>
+define(GetQuicksilverState,24)</br>
+</br>
+40:</br>
+push eax</br>
+push edi</br>
+</br>
+cmp cl,18</br>
+jne short sect0</br>
+</br>
+call GetCharacterIndex</br>
+</br>
+cmp al,03</br>
+jne short sect0</br>
+</br>
+push 08</br>
+call GetBinding</br>
+</br>
+mov edi,eax</br>
+</br>
+call GetInput</br>
+</br>
+and eax,edi</br>
+</br>
+cmp eax,edi</br>
+jne short sect0</br>
+</br>
+call GetTilt</br>
+</br>
+cmp al,00</br>
+jne short sect0</br>
+</br>
+mov cl,1B</br>
+</br>
+sect0:</br>
+pop edi</br>
+pop eax</br>
+</br>
+mov [esi+00002914],cl</br>
+ret</br>
+</br>
+[DISABLE]
+</div>
+</br>
+</br>
+Take a closer look at the first two instructions.</br>
+</br>
+<div class="code">
+push eax</br>
+push edi
+</div>
+</br>
+</br>
+Assembly uses something called registers to store information and I designed all functions to store each result in the eax register.</br>
+Now, in order to prevent game crashes or undefined behaviour you have to save the current state of a register first.</br>
+This can be done with push.</br>
+This example also makes use of the edi register so we're going to push both eax and edi.</br>
+Using it at the beginning like this allows you to avoid constant use of push and pop before and after each call.</br>
+Talking about pop, to restore both registers to their former glory you would use just that, pop edi and pop eax. We'll get to that later.</br>
+</br>
+<div class="code">
+cmp cl,18</br>
+jne short sect0
+</div>
+</br>
+</br>
+This piece of code checks the <a href="#Moves">move identifier</a>. It is pretty straight forward and translated to English it would be something like: 'If the move to be executed is not Starfall jump to some other section, otherwise proceed.'</br>
+</br>
+<div class="code">
+call GetCharacterIndex</br>
+</br>
+cmp al,03</br>
+jne short sect0
+</div>
+</br>
+</br>
+This checks if we're using Vergil. Same as above: Change section if false, continue if true.</br>
+GetCharacterIndex returns the <a href="#Characters">character id</a>.</br>
+</br>
+<div class="code">
+push 08</br>
+call GetBinding</br>
+</br>
+mov edi,eax</br>
+</br>
+call GetInput</br>
+</br>
+and eax,edi</br>
+</br>
+cmp eax,edi</br>
+jne short sect0
+</div>
+</br>
+</br>
+Here we check if you press or hold Lock-On.</br>
+The code is actually a bit more complex, literally - it involves bit calculation.</br>
+But don't worry, the usage is the same: Change section if the condition is not met, otherwise continue.</br>
+Just stick to this template and you'll be fine.</br>
+GetBinding requires a <a href="#Commands">command id</a> as argument, 08 in this case for Lock-On.</br>
+</br>
+<div class="code">
+call GetTilt</br>
+</br>
+cmp al,00</br>
+jne short sect0
+</div>
+</br>
+</br>
+You know the drill.</br>
+</br>
+GetTilt returns the left analog stick's <a href="#Tilt">tilt</a> relative to the direction your character is currently facing.</br>
+</br>
+<div class="code">
+mov cl,1B
+</div>
+</br>
+</br>
+If all the previous conditions are met (move is Starfall, character is Vergil, Lock-On down and tilt up) replace the move with Lunar Phase. This is done with mov cl,1B.</br>
+</br>
+<div class="code">
+sect0:</br>
+pop edi</br>
+pop eax</br>
+</br>
+mov [esi+00002914],cl</br>
+ret
+</div>
+</br>
+</br>
+Finally the newly added section and the modified default code.</br>
+Note the pop edi and pop eax. Like I said this is required to restore the state of the registers before the push.</br>
+The order is important, always pop the last pushed register first.</br>
+</br>
+After you're done editing the script click on Execute to write it to the file.</br>
+</br>
+<i>Additional Notes</i></br>
+</br>
+You can create a new section by adding a colon after a unique identifier.</br>
+All changes you commit in the memory viewer are saved directly to the file.</br>
+</br>
+<b>Cancellable Helm Breaker</b></br>
+</br>
+This example will show you how to make a specific move cancellable by modifying its motion state.</br>
+</br>
+Let's have a look at the entire code first.</br>
+</br>
+<div class="code">
+[ENABLE]</br>
+define(GetBinding,0)</br>
+define(GetInput,6)</br>
+define(GetTilt,C)</br>
+define(GetCharacterIndex,12)</br>
+define(GetDevilState,18)</br>
+define(GetDoppelgangerState,1E)</br>
+define(GetQuicksilverState,24)</br>
+</br>
+40:</br>
+push eax</br>
+</br>
+mov al,[esi+00002914]</br>
+</br>
+cmp al,06</br>
+jne short sect0</br>
+</br>
+call GetCharacterIndex</br>
+</br>
+cmp al,00</br>
+jne short sect0</br>
+</br>
+and edx,FF00FFFF</br>
+</br>
+sect0:</br>
+pop eax</br>
+</br>
+mov [ecx+000027E0],edx</br>
+ret</br>
+</br>
+[DISABLE]
+</div>
+</br>
+</br>
+On to the first part!</br>
+</br>
+<div class="code">
+push eax
+</div>
+</br>
+</br>
+Save the register.</br>
+</br>
+<div class="code">
+mov al,[esi+00002914]</br>
+</br>
+cmp al,06</br>
+jne short sect0
+</div>
+</br>
+</br>
+Get the current move id and compare it against Helm Breaker's <a href="#Moves">move id</a>.</br>
+Change section if it doesn't match, continue if it does. Same old, same old.</br>
+</br>
+<div class="code">
+call GetCharacterIndex</br>
+</br>
+cmp al,00</br>
+jne short sect0
+</div>
+</br>
+</br>
+Check if we're using Dante.</br>
+</br>
+<div class="code">
+and edx,FF00FFFF
+</div>
+</br>
+</br>
+Apply the new mask. This sets the motion state to 00 allowing you to cancel a move.</br>
+</br>
+<div class="code">
+sect0:</br>
+pop eax</br>
+</br>
+mov [ecx+000027E0],edx</br>
+ret
+</div>
+</br>
+</br>
+The new section and the modified default code.</br>
+</br>
+<span id="AddMissingBGMFiles"><b>Add missing BGM files</b></span></br>
+</br>
+The port is missing a few BGM files, let's fix that!</br>
+</br>
+<u>Requirements</u></br>
+</br>
+Devil May Cry 3 Special Edition PS2 disc or image</br>
+AFS Explorer</br>
+<a href="http://shenmuesubs.sourceforge.net/download/addons/adxutil_221.zip">ADXUtil</a></br>
+<a href="http://www.geocities.jp/aoyoume/aotuv/">aoTuV</a></br>
+</br>
+<u>Process</u></br>
+<ul>
+<li>Insert the disc or mount the image.</li>
+<li>Copy or extract SDATA.AFS to your desktop.</li>
+<li>Start AFS Explorer.</li>
+<li>Click on File -> Import AFS file...</li>
+<li>Navigate to your desktop and select SDATA.AFS.</li>
+<li>Click Open.</li>
+<li>Click Yes.</li>
+<li>Click Action -> Export folder...</li>
+<li>Select Desktop and click OK.</li>
+<li>Close AFS Explorer.</li>
+<li>On your desktop create a new folder and name it sound.</li>
+<li>Open ADXUtil.</li>
+<li>Click on File -> Batch encoder/decoder...</li>
+<li>In the new window click on Batch -> Add file(s)...</li>
+<li>In the new window click on the navigation pane and select FULL_AFS_FILE_DUMP.</li>
+<li>Highlight all adx files.</li>
+<li>Click on Open.</li>
+<li>Click on Batch -> Start!</li>
+<li>In the new window select sound.</li>
+<li>Click OK.</li>
+The program will now decode the adx files.</br>
+In some cases the window freezes up, but don't worry it should finish regardless.</br>
+To monitor the progress just open the sound folder on your desktop and you will see new files popping up every now and then.</br>
+If the process completed the progress window will simply close.
+<li>Close ADXUtil.</li>
+<li>Extract venc64.exe from aoTuV to the sound folder on your desktop.</li>
+<li>Open notepad and paste the following code into it.</li>
+</br>
+<div class="code">
+<pre>
+@echo off
+
+cd /d "%~dp0"
+
+for /f "delims=" %%a in ('dir /B') do (
+	if not "%%a"=="convert.bat" (
+	if not "%%a"=="venc64.exe" (
+		venc64 -q10 -b128 "%%a"
+	)
+	)
+)
+
+del *.wav
+del *.exe
+del "convert.bat"
+</pre>
+</div>
+</br>
+</br>
+<li>Save it as convert.bat in the sound folder on your desktop.</li>
+<li>Run convert.bat.</li>
+This will take a while. After the program is finished only the ogg files should remain.
+<li>Navigate to your Devil May Cry 3 root directory\native and delete the sound folder.</li>
+<li>Now just move the sound folder on your desktop to the Devil May Cry 3 root directory\native.</li>
+</ul>
+Congratulations! The game now has access to all BGM files.</br>
+The only thing to note here is that they are not as loud as the previous files so you might wanna set Volume.SE to 64 to balance this.</br>
+</br>
+</body>
+</html>

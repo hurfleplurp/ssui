@@ -1,0 +1,4 @@
+include *.ini
+include *.html
+include README.md
+include requirements.txt
